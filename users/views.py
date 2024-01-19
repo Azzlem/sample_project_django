@@ -3,13 +3,13 @@ from rest_framework import generics
 from rest_framework.permissions import IsAdminUser
 
 from users.models import User
-from users.serializers import UserSerializer, UserCreateSerializer
+from users.serializers import UserSerializer, UserCreateSerializer, IsAdminUserSerializer
 
 
 class UserList(generics.ListAPIView):
     """ Вывод списка пользователей """
     queryset = User.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = IsAdminUserSerializer
     permission_classes = [IsAdminUser]
 
     @swagger_auto_schema(operation_summary="Список пользователей")

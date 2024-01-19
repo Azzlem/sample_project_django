@@ -42,7 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "users.apps.UsersConfig",
+
+    'users.apps.UsersConfig',
+
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'drf_yasg',
+
 ]
 
 MIDDLEWARE = [
@@ -100,7 +106,7 @@ DATABASES = {
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': 'db',
+        # 'HOST': 'db',
     }
 }
 
